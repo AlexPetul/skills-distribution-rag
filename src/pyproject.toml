@@ -1,0 +1,64 @@
+[tool.poetry]
+name = "booking"
+version = "0.1.0"
+description = ""
+authors = ["alexpetul <alekspetul@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.13"
+fastapi = "^0.124.2"
+sqlalchemy = "^2.0.45"
+dishka = "^1.7.2"
+alembic = "^1.17.2"
+uvicorn = "^0.38.0"
+asyncpg = "^0.31.0"
+pydantic-settings = "^2.12.0"
+polyfactory = "^3.1.0"
+feedparser = "^6.0.12"
+httpx = "^0.28.1"
+openai = "^2.14.0"
+advanced-alchemy = "^1.8.2"
+redis = "^7.1.0"
+pgvector = "^0.4.2"
+
+[tool.poetry.group.dev.dependencies]
+polyfactory = "^3.1.0"
+pytest = "^9.0.2"
+pytest-asyncio = "^1.3.0"
+ruff = "^0.14.9"
+mypy = "^1.19.1"
+pytest-cov = "^7.0.0"
+
+[tool.ruff]
+line-length = 100
+extend-exclude = ["alembic"]
+
+[tool.ruff.lint]
+select = [
+    "E",    # pycodestyle errors
+    "W",    # pycodestyle warnings
+    "F",    # pyflakes
+    "I",    # isort
+    "C90",  # mccabe
+    "N",    # pep8-naming
+    "C4",   # flake8-comprehensions
+    "Q",    # flake8-quotes
+    "S",    # flake8-bandit
+]
+
+[tool.ruff.lint.per-file-ignores]
+"test_*" = ["S101"]  # Use of assert
+
+[tool.mypy]
+plugins = ["pydantic.mypy"]
+exclude = ["alembic"]
+
+[tool.pytest.ini_options]
+addopts = "--strict-config --strict-markers"
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

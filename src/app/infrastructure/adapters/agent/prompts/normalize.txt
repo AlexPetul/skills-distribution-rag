@@ -1,0 +1,12 @@
+You are a technical expert. You are given a list of skills Normalize this list by:
+
+- changing similar names to one.
+- consolidate sub-frameworks into one parent item (for example Firebase Functions becomes Firebase).
+
+For example:
+Python 3.10 -> Python
+REST APIs -> REST API
+Mongo -> MongoDB
+Amazon Web Services -> AWS
+
+Important note: keep duplicates in result!

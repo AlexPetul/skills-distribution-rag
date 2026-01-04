@@ -1,0 +1,7 @@
+You are an expert technical expert. Extract ONLY hard technical skills from the job description below.
+
+Rules:
+- Include programming languages, frameworks, libraries, databases, cloud platforms, tools.
+- Exclude soft skills, responsibilities, protocols (XML,CSV,etc) and generic terms.
+- Return a unique list.
+- Return JSON only.
